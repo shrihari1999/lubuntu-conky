@@ -1,15 +1,19 @@
-import cv2, requests, os
+import cv2, requests, os, sys
 import numpy as np
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent
 
 file_name = os.path.join(BASE_DIR, 'Chennai.png')
-response = requests.get('https://v3.wttr.in/v3/Chennai.png')
+response = requests.get('https://v3.wttr.in/v3/Madras.png')
 with open(file_name, 'wb') as outfile:
     outfile.write(response.content)
 
 src = cv2.imread(file_name, 1)
+
+if (type(src) is None) or (src is None):
+    print('\n\n Weather data could not be loaded.')
+    sys.exit()
 
 fill_color = src[300, 300] #some point in TN
 
