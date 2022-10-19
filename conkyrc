@@ -23,7 +23,7 @@ default_color cyan
 default_shade_color black
 default_outline_color white
 alignment top_left
-gap_x 1040
+gap_x 1065
 gap_y 15
 no_buffers yes
 cpu_avg_samples 2
@@ -39,7 +39,7 @@ color2 DC143C
 
 TEXT
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
-${alignr}${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}CYBERDYNE${color} SYSTEMS${font} 
+${alignr}${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}CYBERDYNE${color} SYSTEMS${font}
 ${alignr}${offset -91}▲   
 ${alignr}${offset 7}└─────────────┐   
 ${alignr}$font │  
@@ -95,11 +95,11 @@ ${alignr}$font │
 ${alignr}$font net -─┘  
 ${alignr}$font ${color1}${color}  ${color1}${color} ip -─┤       
 ${alignr}$font ${color1}[${color} ${execi 60 curl https://ipinfo.io/ip} ${color1}]${color}  public -─┤            
-${alignr}$font ${color1}[${color} ${exec ifconfig enp2s0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'} ${color1}]${color} private -─┘            
+${alignr}$font ${color1}[${color} ${exec ifconfig enp3s0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'} ${color1}]${color} private -─┘            
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 65535 count} ${color1}]${color} connections -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 32767 count} ${color1}]${color} in / locale -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 32768 61000 count} ${color1}]${color} out / remote -─┤       
-${alignr}$font ${color1}[${color} ${upspeed enp2s0} k/s ${color1}]${color}   up -─┤       
-${alignr}$font ${color1}${color} ${upspeedgraph enp2s0 8,120 DC143C DC143C} ${color1}${color} -─┘    │       
-${alignr}$font ${color1}[${color} ${downspeed enp2s0} k/s ${color1}]${color} down -─┘       
-${alignr}$font ${color1}${color} ${downspeedgraph enp2s0 8,120 DC143C DC143C} ${color1}${color} -─┘            
+${alignr}$font ${color1}[${color} ${upspeed enp3s0} k/s ${color1}]${color}   up -─┤       
+${alignr}$font ${color1}${color} ${upspeedgraph enp3s0 8,120 DC143C DC143C} ${color1}${color} -─┘    │       
+${alignr}$font ${color1}[${color} ${downspeed enp3s0} k/s ${color1}]${color} down -─┘       
+${alignr}$font ${color1}${color} ${downspeedgraph enp3s0 8,120 DC143C DC143C} ${color1}${color} -─┘            
