@@ -1,0 +1,35 @@
+import os, requests
+from datetime import datetime
+from gtts import gTTS
+from pydub import AudioSegment
+from pydub.playback import play
+from pydub.effects import speedup
+
+text = ''
+
+# greeting
+now = datetime.now()
+hour = now.hour
+time_of_day = 'morning' if hour < 12 else 'afternoon' if hour < 16 else 'evening'
+
+text += f"Good {time_of_day}!"
+
+# time
+time = now.strftime('%I:%M %p')
+text += f"It's {time},"
+
+# weather
+response = requests.get('https://wttr.in/Chennai?format=j1').json()
+current_condition = response['current_condition'][0]
+temperature = current_condition['temp_C']
+weather_desc = current_condition['weatherDesc'][0]['value']
+
+text += f"The weather in Chennai is {temperature} degrees, {weather_desc}."
+
+# speak
+tts = gTTS(text, lang='en', tld='ca')
+tts.save('voice.mp3')
+audio = AudioSegment.from_mp3('voice.mp3')
+fast_audio = speedup(audio, 1.2)
+play(fast_audio)
+os.remove('voice.mp3')
