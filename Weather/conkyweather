@@ -1,7 +1,7 @@
 use_xft yes
 xftfont monospace:pixelsize=11
 xftalpha 0.1
-update_interval 1
+update_interval 60
 total_run_times 0
 
 own_window yes
