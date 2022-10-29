@@ -20,11 +20,13 @@ text += f"It's {time},"
 
 # weather
 response = requests.get('https://wttr.in/Chennai?format=j1').json()
+hourly_condition = response['weather'][0]['hourly'][int(hour/3)]
+temperature = hourly_condition['tempC']
+hourly_weather_desc = hourly_condition['weatherDesc'][0]['value']
 current_condition = response['current_condition'][0]
-temperature = current_condition['temp_C']
-weather_desc = current_condition['weatherDesc'][0]['value']
+current_weather_desc = current_condition['weatherDesc'][0]['value']
 
-text += f"The weather in Chennai is {temperature} degrees, {weather_desc}."
+text += f"The weather in Chennai is {temperature} degrees, {hourly_weather_desc}, {current_weather_desc}."
 
 # speak
 tts = gTTS(text, lang='en', tld='ca')
