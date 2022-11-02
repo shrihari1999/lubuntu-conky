@@ -24,7 +24,7 @@ default_shade_color black
 default_outline_color white
 alignment top_left
 gap_x 775
-gap_y 747
+gap_y 748
 no_buffers yes
 cpu_avg_samples 2
 net_avg_samples 2
@@ -39,7 +39,7 @@ color2 DC143C
 
 TEXT
 ${if_running audacious}\
-${font DejaVu Sans:pixelsize=30}${color}${if_match "${audacious_status}" == "Playing"}▶${else}${if_match "${audacious_status}" == "Paused"}${font DejaVu Sans:pixelsize=20}❚❚${else}${font DejaVu Sans:pixelsize=30}${color2}■${color1}${endif}${endif} ${font DejaVu Sans:pixelsize=15}${color}${if_match ${exec audtool --current-song-tuple-data title |awk '{print length}'}<30}${exec audtool --current-song-tuple-data title}${else}${scroll 30 3 ${exec audtool --current-song-tuple-data title}}${endif}
+${font DejaVu Sans:pixelsize=26}${color}${if_match "${audacious_status}" == "Playing"}▶${else}${if_match "${audacious_status}" == "Paused"}${font DejaVu Sans:pixelsize=18}❚❚${else}${font DejaVu Sans:pixelsize=26}${color2}■${color1}${endif}${endif} ${font DejaVu Sans:pixelsize=15}${color}${if_match ${exec audtool --current-song-tuple-data title |awk '{print length}'}<30}${exec audtool --current-song-tuple-data title}${else}${scroll 30 3 ${exec audtool --current-song-tuple-data title}}${endif}
 ${font}${if_match ${exec audtool --current-song-tuple-data artist |awk '{print length}'}<23}${exec audtool --current-song-tuple-data artist}${else}${scroll 23 3 ${exec audtool --current-song-tuple-data artist}}${endif}${alignr}  ${color2}[ ${color1}${audacious_position} | ${audacious_length} ${color2}]${color1}
 #${font}${exec audtool --current-song-tuple-data artist}${alignr}  ${color2}[ ${color1}${exec audtool --current-song-output-length} | ${exec audtool --current-song-length} ${color2}]${color1}
 ${audacious_bar}
