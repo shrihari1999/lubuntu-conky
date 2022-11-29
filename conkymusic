@@ -32,6 +32,7 @@ override_utf8_locale yes
 use_spacer yes
 
 maximum_width 280
+minimum_size 280
 
 #color1 DC143C
 color1 cyan
