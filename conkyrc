@@ -101,5 +101,5 @@ ${alignr}$font ${color1}[${color} ${tcp_portmon 1 32767 count} ${color1}]${color
 ${alignr}$font ${color1}[${color} ${tcp_portmon 32768 61000 count} ${color1}]${color} out / remote -─┤       
 ${alignr}$font ${color1}[${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${upspeed enp0s26u1u2}${else}${upspeed enp3s0}${endif} k/s ${color1}]${color}   up -─┤       
 ${alignr}$font ${color1}${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${upspeedgraph enp0s26u1u2 8,120 DC143C DC143C}${else}${upspeedgraph enp3s0 8,120 DC143C DC143C}${endif} ${color1}${color} -─┘    │       
-${alignr}$font ${color1}[${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${downspeed enp0s26u1u2}${else}{downspeed enp3s0}${endif} k/s ${color1}]${color} down -─┘       
+${alignr}$font ${color1}[${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${downspeed enp0s26u1u2}${else}${downspeed enp3s0}${endif} k/s ${color1}]${color} down -─┘       
 ${alignr}$font ${color1}${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${downspeedgraph enp0s26u1u2 8,120 DC143C DC143C}${else}${downspeedgraph enp3s0 8,120 DC143C DC143C}${endif} ${color1}${color} -─┘            
