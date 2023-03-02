@@ -95,7 +95,7 @@ ${alignr}$font │
 ${alignr}$font net -─┘  
 ${alignr}$font ${color1}${color}  ${color1}${color} ip -─┤       
 ${alignr}$font ${color1}[${color} ${execi 60 curl https://ipinfo.io/ip} ${color1}]${color}  public -─┤            
-${alignr}$font ${color1}[${color} ${exec ifconfig enp3s0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'} ${color1}]${color} private -─┘            
+${alignr}$font ${color1}[${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${exec ifconfig enp0s26u1u2 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'}${else}${exec ifconfig enp3s0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'}${endif} ${color1}]${color} private -─┘            
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 65535 count} ${color1}]${color} connections -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 32767 count} ${color1}]${color} in / locale -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 32768 61000 count} ${color1}]${color} out / remote -─┤       
