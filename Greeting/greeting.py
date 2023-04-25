@@ -22,11 +22,18 @@ text += f"It's {time},"
 response = requests.get('https://wttr.in/Chennai?format=j1').json()
 hourly_condition = response['weather'][0]['hourly'][int(hour/3)]
 temperature = hourly_condition['tempC']
+wind_speed = float(hourly_condition['windspeedKmph'])
 hourly_weather_desc = hourly_condition['weatherDesc'][0]['value']
 current_condition = response['current_condition'][0]
 current_weather_desc = current_condition['weatherDesc'][0]['value']
 
-text += f"The weather in Chennai is {temperature} degrees, {hourly_weather_desc}, {current_weather_desc}."
+text += f"The weather in Chennai is {temperature} degrees, {hourly_weather_desc}"
+if hourly_weather_desc.lower() != current_weather_desc.lower():
+    text += f", {current_weather_desc}"
+text += '.'
+
+if wind_speed > 0:
+    text += f" Warning! High wind speeds detected upto {wind_speed} kilometers per hour. A High Threat to Life and Property from High Wind is expected."
 
 # speak
 tts = gTTS(text, lang='en', tld='ca')
