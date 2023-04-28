@@ -32,7 +32,7 @@ if hourly_weather_desc.lower() != current_weather_desc.lower():
     text += f", {current_weather_desc}"
 text += '.'
 
-if wind_speed > 0:
+if wind_speed > 50:
     text += f" Warning! High wind speeds detected upto {wind_speed} kilometers per hour. A High Threat to Life and Property from High Wind is expected."
 
 # speak
