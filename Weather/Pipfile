@@ -4,10 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+matplotlib = "*"
+shapely = "*"
+pyshp = "*"
+pyproj = "*"
+cartopy = "*"
 requests = "*"
-opencv-python = "*"
+scipy = "*"
+requests-futures = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.12"
 
 [dev-packages]

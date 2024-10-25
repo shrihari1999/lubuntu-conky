@@ -1,75 +1,82 @@
-# this file goes in ~
+conky.config = {
+	background = true,
+	use_xft = true,
+	font = 'monospace:pixelsize=11',
+	xftalpha = 1,
+	update_interval = 1,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_type = 'normal',
+	own_window_colour = '000000',
+	own_window_argb_visual = true,
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	stippled_borders = 0,
+	border_margin = '4',
+	border_width = 0,
+	default_color = 'cyan',
+	default_shade_color = 'black',
+	default_outline_color = 'white',
+	alignment = 'top_right',
+	gap_x = 195,
+	gap_y = 10,
+	no_buffers = true,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	override_utf8_locale = true,
+	use_spacer = 'yes',
 
+	color1 = 'cyan',
+	color2 = 'DC143C',
 
-background yes
-use_xft yes
-xftfont monospace:pixelsize=11
-xftalpha 1
-update_interval 1
-total_run_times 0
-own_window yes
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_type normal
-double_buffer yes
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders yes
-stippled_borders 0
-border_margin 4
-border_width 0
-default_color cyan
-default_shade_color black
-default_outline_color white
-alignment top_left
-gap_x 1065
-gap_y 15
-no_buffers yes
-cpu_avg_samples 2
-net_avg_samples 2
-override_utf8_locale yes
-use_spacer yes
+};
 
-maximum_width 350
-
-#color1 DC143C
-color1 cyan
-color2 DC143C
-
-TEXT
+conky.text = [[
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
 ${alignr}${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}CYBERDYNE${color} SYSTEMS${font}
 ${alignr}${offset -91}▲   
 ${alignr}${offset 7}└─────────────┐   
 ${alignr}$font │  
 ${alignr}$font ${nodename} -─┤  
-${alignr}$font ${color1}${color1}[${color}${color} ${exec uname -r | cut -c 1-14} ${color1}]${color} kernel -─┤    │  
+${alignr}$font ${color1}[${color} ${kernel} ${color1}]${color} kernel -─┤    │  
 ${alignr}$font ${color1}[${color} $machine ${color1}]${color}   arch -─┤    │  
 ${alignr}$font ${color1}[${color} $uptime ${color1}]${color} uptime -─┘    │  
-${alignr}$font ${color1}[${color} ${battery BAT0} ${color1}]${color} battery -─┘    │  
+#${alignr}$font ${color1}[${color} ${battery BAT0} ${color1}]${color} battery -─┘    │  
 ${alignr}$font │  
 ${alignr}$font system -${color1}─┤${color}  
 ${alignr}$font cpu -─┤    │  
 ${alignr}$font used -─┤    │    │  
-${alignr}${color2}[${cpu 1}%]${color} CPU1 ${color2}[${color}${color2}${cpu 2}%]${color} CPU2 -─┤    │    │    │  
-${alignr}$font ${color2}[${cpu 3}%]${color} CPU3 ${color2}[${color}${color2}${cpu 4}%]${color} CPU4 -─┘    │    │    │  
-${alignr}$font freq -─┤    │    │  
-${alignr}$font ${color1}[${color} ${freq 1}mhz ${color1}]${color} cpu1 -─┤    │    │    │  
-${alignr}$font ${color1}[${color} ${freq 2}mhz ${color1}]${color} cpu2 -─┘    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% ${color1}]${color}   cpu1-3 -─┤    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu4}% ${cpu cpu5}% ${cpu cpu6}% ${color1}]${color}   cpu4-6 -─┤    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu7}% ${cpu cpu7}% ${cpu cpu9}% ${color1}]${color}   cpu7-9 -─┤    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu10}% ${cpu cpu1}% ${cpu cpu12}% ${color1}]${color} cpu10-12 -─┤    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu13}% ${cpu cpu4}% ${cpu cpu15}% ${color1}]${color} cpu13-15 -─┘    │    │    │  
+#${alignr}[ ${cpu cpu0}% ] cpu1-cpu15 -─┘    │    │    │  
+#${alignr}$font freq (GHz) -─┤    │    │  
+#${alignr}$font ${color1}[${color} ${freq_g 1} ${freq_g 2} ${freq_g 3} ${color1}]${color}   cpu1-3 -─┤    │    │    │  
+#${alignr}$font ${color1}[${color} ${freq_g 4} ${freq_g 5} ${freq_g 6} ${color1}]${color}   cpu4-6 -─┤    │    │    │  
+#${alignr}$font ${color1}[${color} ${freq_g 7} ${freq_g 7} ${freq_g 9} ${color1}]${color}   cpu7-9 -─┤    │    │    │  
+#${alignr}$font ${color1}[${color} ${freq_g 10} ${freq_g 11} ${freq_g 12} ${color1}]${color} cpu10-12 -─┤    │    │    │  
+#${alignr}$font ${color1}[${color} ${freq_g 13} ${freq_g 14} ${freq_g 15} ${color1}]${color} cpu13-15 -─┤    │    │    │  
 ${alignr}$font ${color1}[${color} $loadavg ${color1}]${color} load -─┤    │    │  
 ${alignr}$font ${color2}[${color} ${top name 1}  ${top cpu 1} ${color2}]${color} -─┤    │    │  
 ${alignr}$font ${color2}[${color} ${top name 2}  ${top cpu 2} ${color2}]${color} -─┤    │    │  
 ${alignr}$font ${color2}[${color} ${top name 3}  ${top cpu 3} ${color2}]${color} -─┤    │    │  
 ${alignr}$font ${color2}[${color} ${top name 4}  ${top cpu 4} ${color2}]${color} -─┤    │    │  
-${alignr}$font ${color2}[${color} ${top name 5}  ${top cpu 5} ${color2}]${color} -─┘    │    │  
-${alignr}$font processes -─┤    │  
-${alignr}$font ${color1}[${color} $processes ${color1}]${color}   total -─┤    │    │  
-${alignr}$font ${color1}[${color} $running_processes ${color1}]${color} running -─┘    │    │  
-${alignr}$font temperature -─┘    │  
-${alignr}$font ${color1}[${color} ${exec sensors | grep -m 1 "Core 0" | cut -c 17-22} ${color1}]${color} tmp1 -─┘         │  
-#${alignr}$font ${color1}[${color} ${if_match ${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}>=65}${color2}${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}${else}${color1}${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}${endif}${color}${color} ${color1}]${color} tmp1 -─┘         │  
-${alignr}$font │  
+${alignr}$font ${color2}[${color} ${top name 5}  ${top cpu 5} ${color2}]${color} -─┤    │    │  
+${alignr}$font processes -─┤    │    │  
+${alignr}$font ${color1}[${color} $processes ${color1}]${color}   total -─┤    │    │    │  
+${alignr}$font ${color1}[${color} $running_processes ${color1}]${color} running -─┘    │    │    │  
+${alignr}$font temperature -─┘    │    │  
+${alignr}$font ${color1}[${color} ${hwmon k10temp temp 1}°C ${color1}]${color} tctl -─┘         │    │  
+${alignr}$font gpu -─┤    │  
+${alignr}[ ${nvidia gpuutil}% ] used -─┤    │    │  
+${alignr}[ ${nvidia gputemp}°C ] temperature -─┘    │    │  
 ${alignr}$font resources -─┤  
 ${alignr}$font ${color1}[${color} $diskio_read ${color1}]${color}  read -─┤    │  
 ${alignr}$font ${color1}[${color} $diskio_write ${color1}]${color} write -─┤    │  
@@ -85,21 +92,21 @@ ${alignr}$font ${color1}[${color} $swapperc% - $swap/$swapmax ${color1}]${color}
 ${alignr}$font ${color1}[${color} ${swapbar 5,120} ${color1}]${color} -─┘    │    │  
 ${alignr}$font ${color1}[${color} ${fs_used /}/${fs_size /} ${color1}]${color} root -─┤    │  
 ${alignr}$font ${color1}[${color} ${fs_bar 5,120 /} ${color1}]${color} -─┘    │    │  
-${alignr}$font ${color1}[${color} ${fs_used /home/shrihari}/${fs_size /home/shrihari} ${color1}]${color} home -─┤    │  
-${alignr}$font ${color1}[${color} ${fs_bar 5,120 /home/shrihari} ${color1}]${color} -─┘    │    │  
-${if_empty ${exec df | grep /dev/sdb1}}${else}${alignr}$font ${color1}[${color} ${fs_used /media/shrihari/TOSHIBA EXT1}/${fs_size /media/shrihari/TOSHIBA EXT1} ${color1}]${color} THOSIBA EXT -─┤    │  
-${alignr}$font ${color1}[${color} ${fs_bar 5,120 /media/shrihari/TOSHIBA EXT1} ${color1}]${color} -─┘    │    │  ${endif}
-#${alignr}$font ${color1}[${color} ${fs_used /usr/local}/${fs_size /usr/local} ${color1}]${color} local -─┘    │  
-#${alignr}$font ${color1}[${color} ${fs_bar 5,120 /home/Container/} ${color1}]${color} -─┘         │  
+${alignr}$font ${color1}[${color} ${fs_used /home/shrihari}/${fs_size /home/shrihari} ${color1}]${color} home ${if_empty ${exec df | grep TOSHIBA}}-─┘${else}-─┤${endif}    │  
+${alignr}$font ${color1}[${color} ${fs_bar 5,120 /home/shrihari} ${color1}]${color} -─┘    ${if_empty ${exec df | grep TOSHIBA}} ${else}│${endif}    │  
+${if_empty ${exec df | grep TOSHIBA}}${alignr}$font │  ${else}${alignr}$font ${color1}[${color} ${fs_used /media/shrihari/TOSHIBA EXT}/${fs_size /media/shrihari/TOSHIBA EXT} ${color1}]${color} THOSIBA EXT -─┘    │  
+${alignr}$font ${color1}[${color} ${fs_bar 5,120 /media/shrihari/TOSHIBA EXT} ${color1}]${color} -─┘         │  
 ${alignr}$font │  
-${alignr}$font net -─┘  
-${alignr}$font ${color1}${color}  ${color1}${color} ip -─┤       
-${alignr}$font ${color1}[${color} ${execi 60 curl https://ipinfo.io/ip} ${color1}]${color}  public -─┤            
-${alignr}$font ${color1}[${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${exec ifconfig enp0s26u1u2 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'}${else}${exec ifconfig enp3s0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'}${endif} ${color1}]${color} private -─┘            
+${endif}
+${alignr}$font network -─┘  
+${alignr}$font ${color1}${color}  ${color1}${color} ip -─┤     
+${alignr}$font ${color1}[${color} ${curl https://ipinfo.io/ip 1} ${color1}]${color}  public -─┤   │       
+${alignr}$font ${color1}[${color} ${if_match ${addr enp8s0} == "No Address"}${addr wlp7s0}${else}${addr enp8s0}${endif} ${color1}]${color} private -─┘   │       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 65535 count} ${color1}]${color} connections -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 32767 count} ${color1}]${color} in / locale -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 32768 61000 count} ${color1}]${color} out / remote -─┤       
-${alignr}$font ${color1}[${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${upspeed enp0s26u1u2}${else}${upspeed enp3s0}${endif} k/s ${color1}]${color}   up -─┤       
-${alignr}$font ${color1}${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${upspeedgraph enp0s26u1u2 8,120 DC143C DC143C}${else}${upspeedgraph enp3s0 8,120 DC143C DC143C}${endif} ${color1}${color} -─┘    │       
-${alignr}$font ${color1}[${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${downspeed enp0s26u1u2}${else}${downspeed enp3s0}${endif} k/s ${color1}]${color} down -─┘       
-${alignr}$font ${color1}${color} ${if_empty ${exec ifconfig enp3s0 | grep 'inet addr'}}${downspeedgraph enp0s26u1u2 8,120 DC143C DC143C}${else}${downspeedgraph enp3s0 8,120 DC143C DC143C}${endif} ${color1}${color} -─┘            
+${alignr}$font ${color1}[${color} ${if_match ${addr enp8s0} == "No Address"}${upspeed wlp7s0}${else}${upspeed enp8s0}${endif}/s ${color1}]${color}   up -─┤       
+${alignr}$font ${color1}${color} ${if_match ${addr enp8s0} == "No Address"}${upspeedgraph wlp7s0 8,120 DC143C DC143C}${else}${upspeedgraph enp8s0 8,120 DC143C DC143C}${endif}${color1}${color} -─┘    │     
+${alignr}$font ${color1}[${color} ${if_match ${addr enp8s0} == "No Address"}${downspeed wlp7s0}${else}${downspeed enp8s0}${endif}/s ${color1}]${color} down -─┘       
+${alignr}$font ${color1}${color} ${if_match ${addr enp8s0} == "No Address"}${downspeedgraph wlp7s0 8,120 DC143C DC143C}${else}${downspeedgraph enp8s0 8,120 DC143C DC143C}${endif}${color1}${color} -─┘          
+]];

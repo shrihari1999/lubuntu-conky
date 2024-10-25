@@ -1,0 +1,12 @@
+[
+    {"coordinates": [77.6, 14.6833], "city": "Anantapur"},
+    {"coordinates": [78.1667, 14.1167], "city": "Kadiri"},
+    {"coordinates": [77.1017, 13.3422], "city": "Tumkur"},
+    {"coordinates": [78.2333, 12.5333], "city": "Krishnagiri"},
+    {"coordinates": [78.1667, 11.65], "city": "Salem"},
+    {"coordinates": [79.9667, 14.4333], "city": "Nellore"},
+    {"coordinates": [76.7, 11.4], "city": "Ooty"},
+    {"coordinates": [79.0667, 12.2167], "city": "Tiruvannamalai"},
+    {"coordinates": [79.75, 11.75], "city": "Cuddalore"},
+    {"coordinates": [80.2785, 13.0878], "city": "Chennai"}
+]
