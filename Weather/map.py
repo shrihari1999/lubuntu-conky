@@ -3,7 +3,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 from cartopy.io.img_tiles import GoogleWTS
 from cartopy.io import shapereader
-import random, json
+import random, json, os
 import matplotlib.image as mpimg
 import matplotlib.patheffects as path_effects
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
@@ -135,3 +135,5 @@ for icon_future in as_completed(icon_futures):
     )
 
 plt.savefig('weather.png', transparent=True, bbox_inches='tight', dpi=dpi, pad_inches=0)
+
+os.system('convert weather.png -background transparent -flatten weather.png')
