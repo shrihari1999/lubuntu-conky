@@ -1,46 +1,47 @@
-# this file goes in ~
+conky.config = {
+	background = true,
+	use_xft = true,
+	font = 'monospace:pixelsize=11',
+	xftalpha = 1,
+	update_interval = 1,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_type = 'normal',
+	own_window_colour = '000000',
+	own_window_argb_visual = true,
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	stippled_borders = 0,
+	border_margin = '4',
+	border_width = 0,
+	default_color = 'cyan',
+	default_shade_color = 'black',
+	default_outline_color = 'white',
+	alignment = 'top_left',
+	gap_x = 1034,
+	gap_y = 900,
+	no_buffers = true,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	override_utf8_locale = true,
+	use_spacer = 'yes',
 
+	maximum_width = 540,
+	minimum_width = 540,
 
-background yes
-use_xft yes
-xftfont monospace:pixelsize=11
-xftalpha 1
-update_interval 1
-total_run_times 0
-own_window yes
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_type normal
-double_buffer yes
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders yes
-stippled_borders 0
-border_margin 4
-border_width 0
-default_color cyan
-default_shade_color black
-default_outline_color white
-alignment top_left
-gap_x 775
-gap_y 748
-no_buffers yes
-cpu_avg_samples 2
-net_avg_samples 2
-override_utf8_locale yes
-use_spacer yes
+	color1 = 'cyan',
+	color2 = 'DC143C',
 
-maximum_width 280
-minimum_size 280
+};
 
-#color1 DC143C
-color1 cyan
-color2 DC143C
-
-TEXT
+conky.text = [[
 ${if_running audacious}\
-${font DejaVu Sans:pixelsize=26}${color}${if_match "${audacious_status}" == "Playing"}▶${else}${if_match "${audacious_status}" == "Paused"}${font DejaVu Sans:pixelsize=18}❚❚${else}${font DejaVu Sans:pixelsize=26}${color2}■${color1}${endif}${endif} ${font DejaVu Sans:pixelsize=15}${color}${if_match ${exec audtool --current-song-tuple-data title |awk '{print length}'}<30}${exec audtool --current-song-tuple-data title}${else}${scroll 30 3 ${exec audtool --current-song-tuple-data title}}${endif}
+${font DejaVu Sans:pixelsize=32}${color}${if_match "${audacious_status}" == "Playing"}▶${else}${if_match "${audacious_status}" == "Paused"}${font DejaVu Sans:pixelsize=18}❚❚${else}${font DejaVu Sans:pixelsize=26}${color2}■${color1}${endif}${endif} ${font DejaVu Sans:pixelsize=15}${color}${if_match ${exec audtool --current-song-tuple-data title |awk '{print length}'}<55}${exec audtool --current-song-tuple-data title}${else}${scroll 55 10 ${exec audtool --current-song-tuple-data title}}${endif}
 ${font}${if_match ${exec audtool --current-song-tuple-data artist |awk '{print length}'}<23}${exec audtool --current-song-tuple-data artist}${else}${scroll 23 3 ${exec audtool --current-song-tuple-data artist}}${endif}${alignr}  ${color2}[ ${color1}${audacious_position} | ${audacious_length} ${color2}]${color1}
 #${font}${exec audtool --current-song-tuple-data artist}${alignr}  ${color2}[ ${color1}${exec audtool --current-song-output-length} | ${exec audtool --current-song-length} ${color2}]${color1}
 ${audacious_bar}
@@ -48,3 +49,4 @@ Up next - ${exec audtool --playlist-tuple-data title $(( $(audtool --playlist-po
 ${else}
 Media player closed.
 ${endif}
+]];

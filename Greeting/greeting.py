@@ -19,18 +19,15 @@ time = now.strftime('%I:%M %p')
 text += f"It's {time},"
 
 # weather
-response = requests.get('https://wttr.in/Chennai?format=j1').json()
-hourly_condition = response['weather'][0]['hourly'][int(hour/3)]
-temperature = hourly_condition['tempC']
-wind_speed = float(hourly_condition['windspeedKmph'])
-hourly_weather_desc = hourly_condition['weatherDesc'][0]['value']
-current_condition = response['current_condition'][0]
-current_weather_desc = current_condition['weatherDesc'][0]['value']
+coordinates = [80.2785, 13.0878]
 
-text += f"The weather in Chennai is {temperature} degrees, {hourly_weather_desc}"
-if hourly_weather_desc.lower() != current_weather_desc.lower():
-    text += f", {current_weather_desc}"
-text += '.'
+response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={coordinates[1]}&lon={coordinates[0]}&units=metric&appid=f4f5ed488ce0ad096a0e29394c04be9a").json()
+
+temperature = round(response['main']['temp'])
+wind_speed = response['wind']['speed'] * 3.6 # convert to kmph
+hourly_weather_desc = response['weather'][0]['description']
+
+text += f"The weather in Chennai is {temperature} degrees... {hourly_weather_desc}."
 
 if wind_speed > 50:
     text += f" Warning! High wind speeds detected upto {wind_speed} kilometers per hour. A High Threat to Life and Property from High Wind is expected."
