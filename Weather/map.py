@@ -67,7 +67,7 @@ reader = shapereader.Reader(shapefile_path)
 shape_feature = cfeature.ShapelyFeature(reader.geometries(), projection, facecolor='none', edgecolor='#02c9c9')
 ax.add_feature(shape_feature)
 
-ax.add_feature(cfeature.STATES, edgecolor='#dc143c')
+ax.add_feature(cfeature.STATES, edgecolor='#dc143c', linewidth=1.8)
 
 # Initialize the tile source with your custom server
 tiler = CustomTileSource(desired_tile_form='RGBA')
