@@ -73,9 +73,10 @@ ${alignr}$font ${color1}[${color} $processes ${color1}]${color}   total -─┤ 
 ${alignr}$font ${color1}[${color} $running_processes ${color1}]${color} running -─┘    │    │    │  
 ${alignr}$font temperature -─┘    │    │  
 ${alignr}$font ${color1}[${color} ${hwmon k10temp temp 1}°C ${color1}]${color} tctl -─┘         │    │  
-${alignr}$font gpu -─┤    │  
-${alignr}[ ${nvidia gpuutil}% ] used -─┤    │    │  
-${alignr}[ ${nvidia gputemp}°C ] temperature -─┘    │    │  
+${alignr}$font gpu -─┘    │  
+${alignr}[ ${nvidia gpuutil}% ] used -─┤         │  
+${alignr}[ ${nvidia gputemp}°C ] temperature -─┘         │  
+${alignr}$font │  
 ${alignr}$font resources -─┤  
 ${alignr}$font ${color1}[${color} $diskio_read ${color1}]${color}  read -─┤    │  
 ${alignr}$font ${color1}[${color} $diskio_write ${color1}]${color} write -─┤    │  
@@ -100,12 +101,12 @@ ${endif}
 ${alignr}$font network -─┘  
 ${alignr}$font ${color1}${color}  ${color1}${color} ip -─┤     
 ${alignr}$font ${color1}[${color} ${curl https://ipinfo.io/ip 1} ${color1}]${color}  public -─┤   │       
-${alignr}$font ${color1}[${color} ${if_match ${addr enp8s0} == "No Address"}${addr wlp7s0}${else}${addr enp8s0}${endif} ${color1}]${color} private -─┘   │       
+${alignr}$font ${color1}[${color} ${if_up enp8s0}${addr enp8s0}${else}${addr wlp7s0}${endif} ${color1}]${color} private -─┘   │       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 65535 count} ${color1}]${color} connections -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 1 32767 count} ${color1}]${color} in / locale -─┤       
 ${alignr}$font ${color1}[${color} ${tcp_portmon 32768 61000 count} ${color1}]${color} out / remote -─┤       
-${alignr}$font ${color1}[${color} ${if_match ${addr enp8s0} == "No Address"}${upspeed wlp7s0}${else}${upspeed enp8s0}${endif}/s ${color1}]${color}   up -─┤       
-${alignr}$font ${color1}${color} ${if_match ${addr enp8s0} == "No Address"}${upspeedgraph wlp7s0 8,120 DC143C DC143C}${else}${upspeedgraph enp8s0 8,120 DC143C DC143C}${endif}${color1}${color} -─┘    │     
-${alignr}$font ${color1}[${color} ${if_match ${addr enp8s0} == "No Address"}${downspeed wlp7s0}${else}${downspeed enp8s0}${endif}/s ${color1}]${color} down -─┘       
-${alignr}$font ${color1}${color} ${if_match ${addr enp8s0} == "No Address"}${downspeedgraph wlp7s0 8,120 DC143C DC143C}${else}${downspeedgraph enp8s0 8,120 DC143C DC143C}${endif}${color1}${color} -─┘          
+${alignr}$font ${color1}[${color} ${if_up enp8s0}${upspeed enp8s0}${else}${upspeed wlp7s0}${endif}/s ${color1}]${color}   up -─┤       
+${alignr}$font ${color1}${color} ${if_up enp8s0}${upspeedgraph enp8s0 8,120 DC143C DC143C}${else}${upspeedgraph wlp7s0 8,120 DC143C DC143C}${endif}${color1}${color} -─┘    │     
+${alignr}$font ${color1}[${color} ${if_up enp8s0}${downspeed enp8s0}${else}${downspeed wlp7s0}${endif}/s ${color1}]${color} down -─┘       
+${alignr}$font ${color1}${color} ${if_up enp8s0}${downspeedgraph enp8s0 8,120 DC143C DC143C}${else}${downspeedgraph wlp7s0 8,120 DC143C DC143C}${endif}${color1}${color} -─┘          
 ]];

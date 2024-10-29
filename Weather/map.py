@@ -64,10 +64,10 @@ ax.add_feature(cfeature.LAND, facecolor='cyan')
 # Load and plot city/district borders
 shapefile_path = 'shape/in_district.shp'
 reader = shapereader.Reader(shapefile_path)
-shape_feature = cfeature.ShapelyFeature(reader.geometries(), projection, facecolor='none', edgecolor='#02c9c9')
+shape_feature = cfeature.ShapelyFeature(reader.geometries(), projection, facecolor='none', edgecolor='#02c9c9', linewidth=0.5)
 ax.add_feature(shape_feature)
 
-ax.add_feature(cfeature.STATES, edgecolor='#dc143c', linewidth=1.8)
+ax.add_feature(cfeature.STATES, edgecolor='#dc143c', linewidth=1.5)
 
 # Initialize the tile source with your custom server
 tiler = CustomTileSource(desired_tile_form='RGBA')
