@@ -1,9 +1,11 @@
-import os, requests
+import os, requests, time
 from datetime import datetime
 from gtts import gTTS
 from pydub import AudioSegment
 from pydub.playback import play
 from pydub.effects import speedup
+
+time.sleep(10)
 
 text = ''
 
@@ -36,6 +38,6 @@ if wind_speed > 50:
 tts = gTTS(text, lang='en', tld='ca')
 tts.save('voice.mp3')
 audio = AudioSegment.from_mp3('voice.mp3')
+os.remove('voice.mp3')
 fast_audio = speedup(audio, 1.2)
 play(fast_audio)
-os.remove('voice.mp3')
