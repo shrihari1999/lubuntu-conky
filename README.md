@@ -1,7 +1,7 @@
 # lubuntu-conky
 This is my personal conky configuration, running on my lubuntu 24.04 desktop.
 
-![screen02](https://github.com/user-attachments/assets/ea496176-8402-46a2-8761-6d5940d3d3c4)
+![screen](https://github.com/user-attachments/assets/9994a2f8-5afd-482d-8248-8d33cec39d11)
 
 
 This was my personal conky configuration, that ran on my lubuntu 16.04 desktop.
