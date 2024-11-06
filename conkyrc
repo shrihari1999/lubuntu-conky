@@ -30,6 +30,7 @@ conky.config = {
 	override_utf8_locale = true,
 	-- use_spacer = 'right',
 
+	minimum_width = 360,
 	color1 = 'cyan',
 	color2 = 'DC143C',
 
