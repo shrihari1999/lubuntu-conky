@@ -2,7 +2,7 @@ conky.config = {
 	use_xft = true,
 	font = 'monospace:pixelsize=11',
 	xftalpha = 0.1,
-	update_interval = 600,
+	update_interval = 1800,
 	total_run_times = 0,
 
 	own_window = true,
@@ -38,6 +38,6 @@ conky.config = {
 
 conky.text = [[
 ${color2}[ ${color1}weather${color2} ]${color1}${alignr}Last updated at ${catp /home/shrihari/Documents/Github/lubuntu-conky/Weather/weather.txt}
-${execi 600 /home/shrihari/.local/share/virtualenvs/Weather-Uer9bt10/bin/python3.12 ~/Documents/Github/lubuntu-conky/Weather/map.py}
+${execi 1800 /home/shrihari/.local/share/virtualenvs/Weather-Uer9bt10/bin/python3.12 ~/Documents/Github/lubuntu-conky/Weather/map.py}
 ${image ~/Documents/Github/lubuntu-conky/Weather/weather.png -p 0,25 -s 658x309}
 ]];
