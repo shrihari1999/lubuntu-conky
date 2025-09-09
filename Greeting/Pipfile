@@ -11,4 +11,3 @@ python_version = "3.12"
 [packages]
 gtts = "*"
 pydub = "*"
-simpleaudio = "*"

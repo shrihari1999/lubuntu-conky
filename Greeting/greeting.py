@@ -4,7 +4,6 @@ from gtts import gTTS
 from pydub import AudioSegment
 from pydub.playback import play
 from pydub.effects import speedup
-
 time.sleep(10)
 
 text = ''
