@@ -34,7 +34,7 @@ class CustomTileSource(GoogleWTS):
         
         with open('weather.txt', 'w') as file:
             file.write(rounded_time.strftime("%I:%M %p"))
-        return f"https://{subdomain}.sat.owm.io/maps/2.0/radar/{z}/{x}/{y}?appid=9de243494c0b295cca9337e1e96b00e2&day={utc_rounded_time.strftime("%Y-%m-%dT%H:%M")}"
+        return f"https://{subdomain}.sat.owm.io/maps/2.0/radar/{z}/{x}/{y}?appid=9de243494c0b295cca9337e1e96b00e2&day={utc_rounded_time.strftime('%Y-%m-%dT%H:%M')}"
 
 # Create a Cartopy projection
 projection = ccrs.PlateCarree()
@@ -64,7 +64,7 @@ ax.add_feature(cfeature.LAND, facecolor='cyan')
 # Load and plot city/district borders
 shapefile_path = 'shape/in_district.shp'
 reader = shapereader.Reader(shapefile_path)
-shape_feature = cfeature.ShapelyFeature(reader.geometries(), projection, facecolor='none', edgecolor='#02c9c9', linewidth=0.5)
+shape_feature = cfeature.ShapelyFeature(reader.geometries(), projection, facecolor='none', edgecolor='#02c9c9', linewidth=1.5)
 ax.add_feature(shape_feature)
 
 ax.add_feature(cfeature.STATES, edgecolor='#dc143c', linewidth=1.5)
