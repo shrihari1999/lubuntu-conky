@@ -34,7 +34,7 @@ class CustomTileSource(GoogleWTS):
         
         with open('weather.txt', 'w') as file:
             file.write(rounded_time.strftime("%I:%M %p"))
-        return f"https://{subdomain}.sat.owm.io/maps/2.0/radar/{z}/{x}/{y}?appid=9de243494c0b295cca9337e1e96b00e2&day={utc_rounded_time.strftime("%Y-%m-%dT%H:%M")}"
+        return f"https://{subdomain}.sat.owm.io/maps/2.0/radar/{z}/{x}/{y}?appid=9de243494c0b295cca9337e1e96b00e2&day={utc_rounded_time.strftime('%Y-%m-%dT%H:%M')}"
 
 # Create a Cartopy projection
 projection = ccrs.PlateCarree()
