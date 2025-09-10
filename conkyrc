@@ -53,14 +53,14 @@ ${alignr}$font cpu -─┤    │
 ${alignr}$font used -─┤    │    │  
 ${alignr}$font ${color1}[${color} ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% ${color1}]${color}   cpu1-3 -─┤    │    │    │  
 ${alignr}$font ${color1}[${color} ${cpu cpu4}% ${cpu cpu5}% ${cpu cpu6}% ${color1}]${color}   cpu4-6 -─┤    │    │    │  
-${alignr}$font ${color1}[${color} ${cpu cpu7}% ${cpu cpu7}% ${cpu cpu9}% ${color1}]${color}   cpu7-9 -─┤    │    │    │  
-${alignr}$font ${color1}[${color} ${cpu cpu10}% ${cpu cpu1}% ${cpu cpu12}% ${color1}]${color} cpu10-12 -─┤    │    │    │  
-${alignr}$font ${color1}[${color} ${cpu cpu13}% ${cpu cpu4}% ${cpu cpu15}% ${color1}]${color} cpu13-15 -─┘    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu7}% ${cpu cpu8}% ${cpu cpu9}% ${color1}]${color}   cpu7-9 -─┤    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu10}% ${cpu cpu11}% ${cpu cpu12}% ${color1}]${color} cpu10-12 -─┤    │    │    │  
+${alignr}$font ${color1}[${color} ${cpu cpu13}% ${cpu cpu14}% ${cpu cpu15}% ${color1}]${color} cpu13-15 -─┘    │    │    │  
 #${alignr}[ ${cpu cpu0}% ] cpu1-cpu15 -─┘    │    │    │  
 #${alignr}$font freq (GHz) -─┤    │    │  
 #${alignr}$font ${color1}[${color} ${freq_g 1} ${freq_g 2} ${freq_g 3} ${color1}]${color}   cpu1-3 -─┤    │    │    │  
 #${alignr}$font ${color1}[${color} ${freq_g 4} ${freq_g 5} ${freq_g 6} ${color1}]${color}   cpu4-6 -─┤    │    │    │  
-#${alignr}$font ${color1}[${color} ${freq_g 7} ${freq_g 7} ${freq_g 9} ${color1}]${color}   cpu7-9 -─┤    │    │    │  
+#${alignr}$font ${color1}[${color} ${freq_g 7} ${freq_g 8} ${freq_g 9} ${color1}]${color}   cpu7-9 -─┤    │    │    │  
 #${alignr}$font ${color1}[${color} ${freq_g 10} ${freq_g 11} ${freq_g 12} ${color1}]${color} cpu10-12 -─┤    │    │    │  
 #${alignr}$font ${color1}[${color} ${freq_g 13} ${freq_g 14} ${freq_g 15} ${color1}]${color} cpu13-15 -─┤    │    │    │  
 ${alignr}$font ${color1}[${color} $loadavg ${color1}]${color} load -─┤    │    │  
