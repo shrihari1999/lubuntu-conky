@@ -95,7 +95,7 @@ ${alignr}$font ${color1}[${color} ${fs_used /}/${fs_size /} ${color1}]${color} r
 ${alignr}$font ${color1}[${color} ${fs_bar 5,120 /} ${color1}]${color} -─┘    │    │  
 ${alignr}$font ${color1}[${color} ${fs_used /home/shrihari}/${fs_size /home/shrihari} ${color1}]${color} home ${if_empty ${exec df | grep TOSHIBA}}-─┘${else}-─┤${endif}    │  
 ${alignr}$font ${color1}[${color} ${fs_bar 5,120 /home/shrihari} ${color1}]${color} -─┘    ${if_empty ${exec df | grep TOSHIBA}} ${else}│${endif}    │  
-${if_empty ${exec df | grep TOSHIBA}}${alignr}$font │  ${else}${alignr}$font ${color1}[${color} ${fs_used /media/shrihari/TOSHIBA EXT}/${fs_size /media/shrihari/TOSHIBA EXT} ${color1}]${color} THOSIBA EXT -─┘    │  
+${if_empty ${exec df | grep TOSHIBA}}${alignr}$font │  ${else}${alignr}$font ${color1}[${color} ${fs_used /media/shrihari/TOSHIBA EXT}/${fs_size /media/shrihari/TOSHIBA EXT} ${color1}]${color} TOSHIBA EXT -─┘    │  
 ${alignr}$font ${color1}[${color} ${fs_bar 5,120 /media/shrihari/TOSHIBA EXT} ${color1}]${color} -─┘         │  
 ${alignr}$font │  
 ${endif}
