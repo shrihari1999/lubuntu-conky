@@ -13,8 +13,8 @@ from requests_futures.sessions import FuturesSession
 from concurrent.futures import as_completed
 
 # Define the geographic coordinates of Tamil Nadu
-southwest = (76.5, 11)  # (longitude, latitude) - lower left corner
-northeast = (85, 15)  # (longitude, latitude) - upper right corner
+southwest = (96.25, 11.75)   # (longitude, latitude)
+northeast = (104.75, 15.75)
 
 # Create a tile source using a custom tile server
 class CustomTileSource(GoogleWTS):
@@ -61,13 +61,7 @@ ax.set_aspect('equal', adjustable='box')
 # Add gridlines, coastlines, and any other necessary features for context
 ax.add_feature(cfeature.LAND, facecolor='cyan')
 
-# Load and plot city/district borders
-shapefile_path = 'shape/in_district.shp'
-reader = shapereader.Reader(shapefile_path)
-shape_feature = cfeature.ShapelyFeature(reader.geometries(), projection, facecolor='none', edgecolor='#02c9c9', linewidth=1.5)
-ax.add_feature(shape_feature)
-
-ax.add_feature(cfeature.STATES, edgecolor='#dc143c', linewidth=1.5)
+ax.add_feature(cfeature.STATES, edgecolor='#dc143c', linewidth=0.75)
 
 # Initialize the tile source with your custom server
 tiler = CustomTileSource(desired_tile_form='RGBA')
