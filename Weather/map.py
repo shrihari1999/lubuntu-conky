@@ -3,7 +3,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 from cartopy.io.img_tiles import GoogleWTS
 from cartopy.io import shapereader
-import random, json, os
+import random, json, os, requests
 import matplotlib.image as mpimg
 import matplotlib.patheffects as path_effects
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
@@ -12,9 +12,15 @@ from io import BytesIO
 from requests_futures.sessions import FuturesSession
 from concurrent.futures import as_completed
 
-# Define the geographic coordinates of Tamil Nadu
-southwest = (96.25, 11.75)   # (longitude, latitude)
-northeast = (104.75, 15.75)
+# Define the geographic coordinates of map based on current country
+country = requests.get('https://ipinfo.io/json').text
+if country == 'TH':
+    southwest = (96.25, 11.75)
+    northeast = (104.75, 15.75)
+
+# Default to Tamil Nadu
+southwest = (76.5, 11)  # (longitude, latitude) - lower left corner
+northeast = (85, 15)  # (longitude, latitude) - upper right corner
 
 # Create a tile source using a custom tile server
 class CustomTileSource(GoogleWTS):
