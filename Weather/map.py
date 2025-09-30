@@ -17,10 +17,10 @@ country = requests.get('https://ipinfo.io/country').text.strip()
 if country == 'TH':
     southwest = (96.25, 11.75)
     northeast = (104.75, 15.75)
-
-# Default to Tamil Nadu
-southwest = (76.5, 11)  # (longitude, latitude) - lower left corner
-northeast = (85, 15)  # (longitude, latitude) - upper right corner
+else:
+    # Default to Tamil Nadu
+    southwest = (76.5, 11)  # (longitude, latitude) - lower left corner
+    northeast = (85, 15)  # (longitude, latitude) - upper right corner
 
 # Create a tile source using a custom tile server
 class CustomTileSource(GoogleWTS):
