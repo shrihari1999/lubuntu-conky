@@ -13,7 +13,7 @@ from requests_futures.sessions import FuturesSession
 from concurrent.futures import as_completed
 
 # Define the geographic coordinates of map based on current country
-country = requests.get('https://ipinfo.io/country').text
+country = requests.get('https://ipinfo.io/country').text.strip()
 if country == 'TH':
     southwest = (96.25, 11.75)
     northeast = (104.75, 15.75)
