@@ -7,7 +7,7 @@ import random, json, os, requests
 import matplotlib.image as mpimg
 import matplotlib.patheffects as path_effects
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from io import BytesIO
 from requests_futures.sessions import FuturesSession
 from concurrent.futures import as_completed
@@ -29,18 +29,15 @@ class CustomTileSource(GoogleWTS):
         subdomain = random.choice('abc')
         
         # Get the current time
-        now = datetime.now()
+        now = datetime.now(timezone.utc)
         # Round down to the nearest 10th minute
         rounded_time = now - timedelta(minutes=now.minute % 10, seconds=now.second, microseconds=now.microsecond)
         # Subtract 10 more mins as tile is not available in real time
         rounded_time = rounded_time - timedelta(minutes=10)
-
-        # Convert to UTC
-        utc_rounded_time = rounded_time - timedelta(hours=5, minutes=30)
         
         with open('weather.txt', 'w') as file:
-            file.write(rounded_time.strftime("%I:%M %p"))
-        return f"https://{subdomain}.sat.owm.io/maps/2.0/radar/{z}/{x}/{y}?appid=9de243494c0b295cca9337e1e96b00e2&day={utc_rounded_time.strftime('%Y-%m-%dT%H:%M')}"
+            file.write(rounded_time.astimezone().strftime("%I:%M %p"))
+        return f"https://{subdomain}.sat.owm.io/maps/2.0/radar/{z}/{x}/{y}?appid=9de243494c0b295cca9337e1e96b00e2&day={rounded_time.strftime('%Y-%m-%dT%H:%M')}"
 
 # Create a Cartopy projection
 projection = ccrs.PlateCarree()
