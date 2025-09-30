@@ -1,0 +1,12 @@
+[
+    {"coordinates": [98.2, 14.0833], "city": "Dawei"},
+    {"coordinates": [98.6, 12.4333], "city": "Myeik"},
+    {"coordinates": [99.9098, 12.3847], "city": "Pran Buri"},
+    {"coordinates": [99.8171, 13.5367], "city": "Ratchaburi"},
+    {"coordinates": [100.5167, 13.75], "city": "Bangkok"},
+    {"coordinates": [100.756, 14.0278], "city": "Tambon Rangsit"},
+    {"coordinates": [101.258, 12.681], "city": "Rayong"},
+    {"coordinates": [102.5151, 12.2436], "city": "Trat"},
+    {"coordinates": [103.1982, 13.1027], "city": "Battambang"},
+    {"coordinates": [103.4936, 14.8818], "city": "Surin"}
+]

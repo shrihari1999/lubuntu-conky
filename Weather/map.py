@@ -82,7 +82,7 @@ ax.set_axis_off()
 plt.tight_layout()
 
 # Extract cities data
-with open('cities.json', 'r') as file:
+with open(f"cities-{country}.json", 'r') as file:
     data = json.load(file)
 
 session = FuturesSession()
