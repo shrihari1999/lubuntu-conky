@@ -37,7 +37,7 @@ conky.config = {
 };
 
 conky.text = [[
-${color2}[ ${color1}weather${color2} ]${color1}${alignr}Last updated at ${exec cat /home/shrihari/Documents/Github/lubuntu-conky/Weather/weather.txt}
+${color2}[ ${color1}weather${color2} ]${color1}${alignr}Last updated at ${exec tail -n 1 /home/shrihari/Documents/Github/lubuntu-conky/Weather/weather.txt}
 ${execi 1800 /home/shrihari/.local/share/virtualenvs/Weather-Uer9bt10/bin/python3.10 ~/Documents/Github/lubuntu-conky/Weather/map.py}
 ${image ~/Documents/Github/lubuntu-conky/Weather/weather.png -p 0,25 -s 658x309}
 ]];
